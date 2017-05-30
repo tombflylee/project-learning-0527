@@ -1,0 +1,34 @@
+.holygrail{
+	min-height:100vh;
+	display: flex;
+	flex-direction: column;
+	.holygrail-body{
+		display:flex;
+		flex:1;
+		.holygrail-content{
+			flex:1;
+		}
+		.holygrail-nav, .holygrail-ads{
+			flex:0 0 12em;
+		}
+		.holygrail-nav{
+			order: -1;
+		}
+	}
+	@media (max-width: 768px){
+		.holygrail-body{
+			flex-direction:column;
+			flex:1;
+		}
+		.holygrail-nav,.holygrail-ads,.holygrail-content{
+			flex:auto;
+		}
+	}
+}
+header.header{
+	background-color: #404040;
+	height:5em;
+}
+.container{
+
+}

@@ -21,7 +21,7 @@ export default class extends React.Component{
 		return(
 			<Menu theme={this.state.theme} 
 			onClick={this.handleClick} 
-			style={{width:340,height:'100%'}}
+			style={{width:340}}
 			defaultOpenKeys={['work']} 
 			selectedKeys={[this.state.current]}
 			mode='inline'> 
