@@ -25,6 +25,38 @@ module.exports = {
           presets: ['env']
         }
       }
+    },
+    {
+      test: /\.css$/,
+      include: path.resolve(__dirname,'node_modules'),
+      use: [
+        {
+          loader: 'style-loader'
+        },
+        {
+          loader: 'css-loader',
+          options: {importLoaders: 1}
+        },
+        {
+          loader: 'postcss-loader'
+        }
+      ]
+    },
+    {
+      test: /\.scss$/,
+      include: path.resolve(__dirname,'app'),
+      use:[
+        {
+          loader:'style-loader'
+        },
+        {
+          loader:'css-loader',
+          options: {importLoaders: 1}
+        },
+        {
+          loader:'postcss-loader'
+        }
+      ]
     }
   ]
   },
@@ -32,7 +64,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     // 启用热替换,仅开发模式需要
 
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin()
     // 允许错误不打断程序，,仅开发模式需要
 
   ]
